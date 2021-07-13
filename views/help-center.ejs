@@ -1,0 +1,57 @@
+<body>
+    <%- include('./includes/header.ejs') %>
+    <%- include('./includes/navigation.ejs') %>
+    <div>
+        <div class="mt-5 pt-5">
+            <div>
+              <div class="container">
+                  <div class="pb-4">
+                    <%- include ('./includes/description.ejs', { description: 'Help center' }) %>
+                  </div>
+                      <% if (error) { %>
+                        <div class="pb-4">
+                            <%- include('./includes/alert.ejs', {
+                                variant: '',
+                                message: error,
+                                extra_class_name: 'font-weight-bold'
+                            }) %>
+                        </div>
+                      <% } else if (success) { %>
+                        <%- include('./includes/alert.ejs', {
+                            variant: 'success',
+                            message: success,
+                            extra_class_name: 'font-weight-bold'
+                        }) %>
+                      <% } %>
+                  <form action="/help-center" method="POST">
+                    <div>
+                        <%- include('./includes/text-input', {
+                            input_id: 'help-center',
+                            input_name: 'topic',
+                            input_placeholder: 'Raise a topic...',
+                            input_type: 'text',
+                            input_value: ''
+                        }) %>
+                    </div>
+                    <div class="mt-4">
+                        <%- include('./includes/textarea', {
+                            textarea_name: 'message',
+                            textarea_value: '',
+                            textarea_id: '',
+                            textarea_placeholder: 'Express yourself....'
+                        }) %>
+                    </div>
+                    <div class="mt-3">
+                        <%- include('./includes/button.ejs', {
+                            button_type: 'submit',
+                            class_name: 'rounded primary-app-button col-lg-12 mt-3 py-2',
+                            label: 'Submit',
+                            button_id: ''
+                        }) %>
+                    </div>
+                  </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</body>

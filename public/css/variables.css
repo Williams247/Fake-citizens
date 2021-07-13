@@ -1,0 +1,13 @@
+/* Variables */
+
+:root {
+  --primary-color: #F5F6FA;
+  --primary-text-color: #444F60;
+  --primary-button-color: #8C8CF9;
+  --primary-button-color-hovered: #ababff;
+  --secondary-color: #8C8CF9;
+  --assignment-color: #0f0fa7;
+  --variable-color: #4141ff;
+  --function-color: #6d6d05;
+  --statement-color: purple;
+};

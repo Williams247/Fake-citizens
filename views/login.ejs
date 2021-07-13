@@ -1,0 +1,77 @@
+<style>
+    #editor {
+      background: #EEEEEE;
+    }
+</style>
+<body>  
+<div>
+  <%- include('./includes/header.ejs') %>
+  <div class="container-fluid">
+   <div class="pt-5 pb-5">
+       <div class="pt-5 pb-5">
+           <div class="d-flex justify-content-center">
+               <div class="row col-lg-8">
+                   <div class="col-lg-6">
+                       <h1 class="primary-text-color">Login</h1>
+                       <h6 class="primary-text-color mt-3">Login to your accout, and see what's up!!!</h6>
+                   </div>
+                   <div class="col-lg-6">
+                       <div>
+                            <div class="card rounded element-box-shadow">
+                                <div class="card-body pt-5">
+                                    <% if (error) { %>
+                                        <%- include('./includes/alert.ejs', {
+                                            variant: '',
+                                            message: error,
+                                            extra_class_name: 'font-weight-bold'
+                                        }) %>
+                                    <% } %>
+                                    <form action="/login" method="POST">
+                                        <span class="font-weight-bold">
+                                            Email*
+                                        </span>
+                                        <div class="py-3">
+                                            <%- include('./includes/text-input.ejs', {
+                                                input_type: 'email',
+                                                input_name: 'email',
+                                                input_placeholder: 'Email...',
+                                                input_id:'login-user-email',
+                                                input_value: ''
+                                            }) %>
+                                        </div>
+                                        <span class="font-weight-bold">
+                                            Password*
+                                        </span>
+                                        <div class="py-3">
+                                            <%- include('./includes/text-input.ejs', {
+                                                input_type: 'password',
+                                                input_name: 'password',
+                                                input_placeholder: 'Password...',
+                                                input_id: 'login-user-password',
+                                                input_value: ''
+                                            }) %>
+                                        </div>
+                                        <span class="font-weight-bold">Show password</span>
+                                        <div class="py-3">
+                                            <%- include('./includes/button.ejs', {
+                                                button_type: 'submit',
+                                                class_name: 'rounded primary-app-button mt-3 col-lg-12 py-2',
+                                                label: 'Login',
+                                                button_id: 'login-button'
+                                              }) 
+                                            %>
+                                        </div>
+                                    </form>
+
+                                    <span>Don't have an accout? sign up <a href="/signup">here</a></span>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+  </div>
+</div>
+</body>

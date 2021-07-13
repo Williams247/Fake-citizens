@@ -1,0 +1,172 @@
+<style>
+    #editor {
+      background: #EEEEEE;
+    }
+    .hide {
+        display: none;
+    }
+</style>
+<body>
+<div>
+  <%- include('./includes/header.ejs') %>
+  <div class="container-fluid">
+   <div class="pt-3 pb-5">
+       <div class="pt-3 pb-5">
+           <div class="d-flex justify-content-center mt-5 pt-5">
+               <div class="row col-lg-8">
+                   <div class="col-lg-6">
+                       <h1 class="primary-text-color">Register now</h1>
+                       <h6 class="primary-text-color mt-3">Join use now and get your fake profile details.</h6>
+                       <div class="mt-2">
+                           <%- include('./includes/button.ejs', {
+                                  button_type: 'button',
+                                  class_name: 'rounded primary-app-button mt-3 col-lg-3',
+                                  label: 'Test Now',
+                                  button_id: 'signup-test-button'
+                            }) %>
+                       </div>
+                       <div class="mt-4">
+                        <div class="col-lg-11 mt-4 px-3 py-3 font-weight-bold" id="editor">
+                            <span class="assignment-color">const</span> <span class="variable-color">getProfile</span> = <span class="assignment-color">async</span> () => { <br />
+                               <span class="statement-color">try</span> { <br />
+                                <div class="indent-5"><span class="assignment-color">const</span> <span class="variable-color">url</span> = 'fake-profile/sample';</div>
+                                 <div class="indent-5"><span class="assignment-color">const</span> <span class="variable-color">res</span>
+                                     = <span class="statement-color">await</span> <span class="function-color">fetch</span>(<span class="variable-color">url</span>);<br /></div>
+                                 <div class="indent-5"><span class="assignment-color">const</span> <span class="variable-color">data</span> = <span class="assignment-color">await</span> <span class="variable-color">res</span><span class="function-color">.json</span>();<br /></div>
+                                 <div class="indent-5"><span class="variable-color">console</span>.<span class="function-color">log</span>(data)</div>
+                               } <span class="statement-color">catch</span> (<span class="variable-color">error</span>) {<br />
+                                <div class="indent-5"><span class="variable-color">console</span>.<span class="function-color">log</span>(error)</div>
+                               <div class="indent-2">}</div>
+                            }
+                            <div class="mt-2">
+                                <span class="function-color">getProfile</span>();
+                            </div>
+                        </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-6">
+                       <div>
+                            <div class="card rounded element-box-shadow">
+                                <div class="card-body pt-5">
+                                    <% if (error) { %>
+                                        <%- include('./includes/alert.ejs', {
+                                            variant: '',
+                                            message: error,
+                                            extra_class_name: 'font-weight-bold'
+                                        }) %>
+                                    <% } %>
+                                    <form action="/signup" method="POST">
+                                        <span class="font-weight-bold">
+                                            Name*
+                                        </span>
+                                        <div class="py-3">
+                                            <%- include('./includes/text-input.ejs', {
+                                                input_type: 'text',
+                                                input_name: 'username',
+                                                input_placeholder: 'Name...',
+                                                input_id: 'signup-username',
+                                                input_value: ''
+                                            }) %>
+                                        </div>
+                                        <span class="font-weight-bold">
+                                            Email*
+                                        </span>
+                                        <div class="py-3">
+                                            <%- include('./includes/text-input.ejs', {
+                                                input_type: 'email',
+                                                input_name: 'email',
+                                                input_placeholder: 'Email...',
+                                                input_id: 'signup-user-email',
+                                                input_value: ''
+                                            }) %>
+                                        </div>
+                                        <span class="font-weight-bold">
+                                            Password*
+                                        </span>
+                                        <div class="py-3">
+                                            <%- include('./includes/text-input.ejs', {
+                                                input_type: 'password',
+                                                input_name: 'password',
+                                                input_placeholder: 'Password...',
+                                                input_id: 'signup-user-password',
+                                                input_value: ''
+                                            }) %>
+                                        </div>
+                                        <div class="py-2">
+                                            <%- include('./includes/switch.ejs',
+                                                { switch_id: 'signup-switch'}
+                                            ) %>
+                                        </div>
+                                        <span id="type-indicator" class="font-weight-bold">Show password</span>
+                                        <div class="py-3">
+                                            <%- include('./includes/button.ejs', {
+                                                button_type: 'submit',
+                                                class_name: 'rounded primary-app-button mt-3 col-lg-12 py-2',
+                                                label: 'Register',
+                                                button_id: 'signup-button'
+                                              }) 
+                                            %>
+                                        </div>
+                                    </form>
+                                    <span>Already have an accout? login in <a href="/login">here</a></span>
+                                </div>
+                            </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <%- include('./includes/modal-popup.ejs') %>
+  </div>
+  <script>
+      const closeModalBtn = document.querySelector('#close-button');
+      const testButton = document.querySelector('#signup-test-button');
+      const toggle = document.querySelector('#signup-switch');
+      const modal = document.querySelector('.modal');
+      const testApiBtn = document.querySelector('#test');
+      const modalDisplay = document.querySelector('#modal-display');
+      
+      // Type indicator
+      const typeIndicator = document.querySelector('#type-indicator');
+
+      // Password field
+      const passwordField = document.querySelector('#signup-user-password');
+      
+      // Function to change into types and type indicator text
+      toggle.addEventListener('click', function() {
+          if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            typeIndicator.innerText = 'Hide password'
+          } else {
+            passwordField.type = 'password';
+            typeIndicator.innerText = 'Show password';
+          }
+      });
+
+      // Function to open the test API modal
+      testButton.addEventListener('click', function() {
+          modal.classList.remove('hide')
+      })
+
+      // Function to close the test API modal
+      closeModalBtn.addEventListener('click', function() {
+         modal.classList.add('hide')
+      });
+
+      // Function to test the sample fake profile API
+      testApiBtn.addEventListener('click', function() {
+          modalDisplay.innerHTML = '<h4>Loading....</h4>';
+          fetch('/sample')
+            .then(res => res.json())
+            .then(data => {
+                modalDisplay.innerHTML = `
+                    <h2>Results:</h2>
+                    <h5>${JSON.stringify(data)}</h5>
+                    <p class="mt-3">You will get more information for a user data when you register</p>
+                `;
+            })
+            .catch(error => console.log(error))
+      })
+  </script>
+</body>

@@ -1,0 +1,152 @@
+<body>
+    <%- include('./includes/header.ejs') %>
+    <%- include('./includes/navigation.ejs') %>
+    <div class="mt-5 pt-5 pb-5">
+        <div class="container">
+            <%- include('./includes/description.ejs', { description: 'Settings' }) %>
+            <% if (error) { %>
+                <%- include('./includes/alert.ejs', {
+                    variant: '',
+                    extra_class_name: 'mt-4 font-weight-bold',
+                    message: error
+                }) %>
+            <% } else if (success) { %>
+                <%- include('./includes/alert.ejs', {
+                    variant: 'success',
+                    extra_class_name: 'mt-4 font-weight-bold',
+                    message: success
+                }) %>
+            <% } %>
+
+            <%- include('./includes/button.ejs', {
+                button_type: 'button',
+                class_name: 'rounded primary-app-button mt-4 col-lg-3 py-2 api-key-btn',
+                label: 'NEW API KEY',
+                button_id: 'signup-button'
+              }) 
+            %>
+            <form action="/settings" method="POST">
+                <div class="mt-5">
+                    <span>API Key*</span>
+                    <div class="form-control py-2"><%= data.apiKey %></div>
+                </div>
+                <div class="mt-3">
+                    <span class="mt-3">Your name*</span>
+                    <%- include('./includes/text-input.ejs', {
+                            input_id: 'name',
+                            input_placeholder: 'Your name',
+                            input_name: 'name',
+                            input_type: 'text',
+                            input_value: data.username
+                        })
+                    %>
+                </div>
+                <div class="mt-3">
+                    <span class="mt-3">Your email*</span>
+                    <%- include('./includes/text-input.ejs', {
+                            input_id: 'email',
+                            input_placeholder: 'Your email',
+                            input_name: 'user_email',
+                            input_type: 'email',
+                            input_value: data.email
+                        })
+                    %>
+                </div>
+                <div class="mt-3">
+                    <span class="mt-3">Your current password*</span>
+                    <%- include('./includes/text-input.ejs', {
+                            input_id: 'current-password',
+                            input_placeholder: 'Your password',
+                            input_name: 'current_password',
+                            input_type: 'password',
+                            input_value: ''
+                        })
+                    %>
+                </div>
+                <div class="mt-3">
+                    <span class="mt-3">Your new password*</span>
+                    <%- include('./includes/text-input.ejs', {
+                        input_id: 'new-password',
+                        input_placeholder: 'Your password',
+                        input_name: 'new_password',
+                        input_type: 'password',
+                        input_value: ''
+                    })
+                %>
+                </div>
+                <div class="mt-3">
+                    <%- include('./includes/switch.ejs',
+                        { switch_id: 'settings-switch'}
+                    ) %>
+                    <div class="mt-3">
+                        <span id="show-password-toggle-text">Show password</span>
+                    </div>
+                </div>
+                <div>
+                    <%- include('./includes/button.ejs', {
+                        button_type: 'submit',
+                        class_name: 'rounded primary-app-button mt-3 col-lg-12 py-2',
+                        label: 'Update',
+                        button_id: 'signup-button'
+                      }) 
+                    %>
+                </div>
+            </form>
+        </div>
+    </div>
+    <%- include('./includes/bottom-links.ejs') %>
+    <script>
+        // DOM element
+        const settingsSwitch = document.querySelector('#settings-switch');
+        const currentPassword = document.querySelector('#current-password');
+        const newPassword = document.querySelector('#new-password');
+        const indicator = document.querySelector('#show-password-toggle-text');
+        const apiKeyBtn = document.querySelector('.api-key-btn');
+
+        // Changes the value of the password field
+        settingsSwitch.addEventListener('click', function() {
+            if (currentPassword.type === 'password' || newPassword.type === 'password') {
+                currentPassword.type = 'text';
+                newPassword.type = 'text';
+                indicator.innerText = 'Hide password'
+            } else {
+                currentPassword.type = 'password';
+                newPassword.type = 'password';
+                indicator.innerText = 'Show password'
+            }
+        });
+
+        // Function to modify a user apiKey
+        apiKeyBtn.addEventListener('click', function() {
+            swal({
+                title: "Are you sure?",
+                text: "This will change your API key, to a new one",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((update) => {
+                if (update) {
+                  fetch('/modify-api-key', {
+                      method: 'PUT'
+                  }).then(res => res.json())
+                  .then(data => {
+                      const { message } = data;
+                      swal(message, {
+                        icon: 'success',
+                     });
+                     setTimeout(() => {
+                        location.reload()
+                     }, 3000)
+                  }).catch(() => {
+                    swal('Could not modify your API key', {
+                        icon: 'error',
+                     });
+                  })
+                } else {
+                  swal('Operation terminated!');
+                }
+           });
+        })
+    </script>
+</body>

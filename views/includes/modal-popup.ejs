@@ -1,0 +1,28 @@
+<style>
+    .hide {
+        display: none;
+    }
+</style>
+<div>
+    <div class="modal pt-2 hide">
+        <div class="modal-box py-5 px-5 mt-5">
+            <div class="float-right pb-4 close font-weight-bold" id="close-button">
+                &times;
+            </div>
+            <div class="mt-5">
+                <h2>Test Now!</h2>
+                <div id="modal-display">
+                    Click on the Run End Point button and see a slight example
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <%- include('./button.ejs', {   
+                    label: 'Run End Point',
+                    button_id: 'test',
+                    button_type: 'button',
+                    class_name: 'rounded primary-app-button mt-3 col-lg-5 mt-4 py-2'
+                }) %>
+            </div>
+        </div>
+    </div>
+</div>

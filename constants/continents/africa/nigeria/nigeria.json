@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Chigozie Kalu",
+        "phone_number": "+2347023495672",
+        "state": "Imo"
+    },
+    {
+        "name": "Salami Dele",
+        "phone_number": "+2348025295177",
+        "state": "Ogun"
+    },
+    {
+        "name": "Kelechi Emeka",
+        "phone_number": "+2349135241181",
+        "state": "Imo"
+    },
+    {
+        "name": "Akpan Eno",
+        "phone_number": "+234816451721",
+        "state": "Akwa ibom"
+    },
+    {
+        "name": "Onyeka Chiamaka",
+        "phone_number": "+2349015212441",
+        "state": "Anambra"
+    },
+    {
+        "name": "Lawal Ayomide",
+        "phone_number": "+2349065212251",
+        "state": "Ekiti"
+    },
+    {
+        "name": "Abubakar Samɓali",
+        "phone_number": "+2347064113151",
+        "state": "Kwara"
+    },
+    {
+        "name": "Abubakar Fatima",
+        "phone_number": "+2348064213131",
+        "state": "Kwara"
+    },
+    {
+        "name": "Osinachi Nwachukwu",
+        "phone_number": "+2348174213331",
+        "state": "Enugu"
+    },
+    {
+        "name": "Akan Ekepeyoung",
+        "phone_number": "+2348174213331",
+        "state": "Cross rivers"
+    },
+    {
+        "name": "Atai Ekpe",
+        "phone_number": "+2349171413621",
+        "state": "Cross rivers"
+    },
+    {
+        "name": "Bawa Sarki",
+        "phone_number": "+2347031413621",
+        "state": "Bornu"
+    },
+    {
+        "name": "Taiwo Bisi",
+        "phone_number": "+2347023123673",
+        "state": "Lagos"
+    },
+    {
+        "name": "Chukwueze Obina",
+        "phone_number": "+2348021329673",
+        "state": "Abia"
+    },
+    {
+        "name": "Chisom Obi",
+        "phone_number": "+2349029327773",
+        "state": "Abia"
+    },
+    {
+        "name": "Eze Ebube",
+        "phone_number": "+2348022337773",
+        "state": "Ebonyi"
+    },
+    {
+        "name": "Nwanna Nzekwue",
+        "phone_number": "+2349039327325",
+        "state": "Abia"
+    },
+    {
+        "name": "Nwanna Nzekwue",
+        "phone_number": "+2349039327122",
+        "state": "Delta"
+    },
+    {
+        "name": "Abasi Esu",
+        "phone_number": "+2349139327335",
+        "state": "Akwa ibom"
+    },
+    {
+        "name": "Abieyuwa Amenaghawon",
+        "phone_number": "+2348039522175",
+        "state": "Edo"
+    }
+]

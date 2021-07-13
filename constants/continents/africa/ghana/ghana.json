@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Kofi Kwesi",
+        "phone_number": "+233242426247",
+        "state": "Accra"
+    },
+    {
+        "name": "Vorsah Kufuor",
+        "phone_number": "+233911436243",
+        "state": "Ashanti"
+    },
+    {
+        "name": "Bawumia Mahama",
+        "phone_number": "+233241238247",
+        "state": "North east"
+    },
+    {
+        "name": "Sagri Banbangi",
+        "phone_number": "+233242481327",
+        "state": "North east region"
+    },
+    {
+        "name": "Gyan Shatta",
+        "phone_number": "+233241461412",
+        "state": "Accra"
+    },
+    {
+        "name": "Dramani Mahama",
+        "phone_number": "+233132395422",
+        "state": "Savannah region"
+    },
+    {
+        "name": "Dumor Gbeho",
+        "phone_number": "+233232445223",
+        "state": "Volta region"
+    },
+    {
+        "name": "Ephraim Awoonor",
+        "phone_number": "+233233494412",
+        "state": "Volta region"
+    },
+    {
+        "name": "Ativor Amu",
+        "phone_number": "+233231485422",
+        "state": "Eastern region"
+    },
+    {
+        "name": "Edem Kofi",
+        "phone_number": "+233239435122",
+        "state": "Volta region"
+    },
+    {
+        "name": "Appiah Forson",
+        "phone_number": "+233232335122",
+        "state": "Central region"
+    },
+    {
+        "name": "Woyongo Kwarasey",
+        "phone_number": "+23321475132",
+        "state": "Upper east region"
+    },
+    {
+        "name": "Boateng Kwarasey",
+        "phone_number": "+23321463831",
+        "state": "Oti region"
+    },
+    {
+        "name": "Rawlings ativor",
+        "phone_number": "+23321463831",
+        "state": "Volta region"
+    },
+    {
+        "name": "Asamoah Shatta",
+        "phone_number": "+23321463831",
+        "state": "Accra"
+    },
+    {
+        "name": "Kufuor Vorsah",
+        "phone_number": "+23325464131",
+        "state": "Ashanti"
+    },
+    {
+        "name": "Kinaata Nkrumah",
+        "phone_number": "+23349425131",
+        "state": "Western region"
+    },
+    {
+        "name": "Inkoom Nkrumah",
+        "phone_number": "+23349426742",
+        "state": "Western region"
+    },
+    {
+        "name": "Woyongo Adda",
+        "phone_number": "+23318424642",
+        "state": "Upper east region"
+    },
+    {
+        "name": "Terkper Boateng",
+        "phone_number": "+23338492642",
+        "state": "Eastern region"
+    }
+]

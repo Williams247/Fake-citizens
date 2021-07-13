@@ -1,0 +1,217 @@
+@import './variables.css';
+
+/* Defaults */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: var(--primary-color);
+}
+
+textarea {
+    height: 120px;
+}
+
+/* Primary app color */
+.primary-color {
+    background: var(--primary-color);
+}
+
+/* Primary text color */
+.primary-text-color {
+    color: var(--primary-text-color);
+}
+
+/* Bold font weight */
+.font-weight-bold {
+    font-weight: bold;
+}
+
+/* Primary button app color */
+.primary-app-button {
+    background: var(--secondary-color);
+}
+
+.primary-app-button:hover {
+    background: var(--primary-button-color-hovered);
+}
+
+/* Round borders */
+.rounded {
+    border-radius: 10px !important;
+}
+
+/* General box shadow */
+.element-box-shadow {
+    box-shadow: 0 0 28px #dbdbdb;
+}
+
+/* Cursor - pointer */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--secondary-color);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--secondary-color);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Text indentations */
+.indent-1 {
+    text-indent: 5px;
+}
+
+.indent-2 {
+    text-indent: 10px;
+}
+
+.indent-3 {
+    text-indent: 15px;
+}
+
+.indent-4 {
+    text-indent: 20px;
+}
+
+.indent-5 {
+    text-indent: 25px;
+}
+
+/* Floats */
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+/* close icon */
+.close {
+    font-size: 25px;
+    margin-top: -23px;
+    cursor: pointer;
+}
+
+/* Text editor display color */
+.assignment-color {
+    color: var(--assignment-color);
+}
+
+.variable-color {
+    color: var(--variable-color);
+}
+
+.function-color {
+    color: var(--function-color);
+}
+
+.statement-color {
+    color: var(--statement-color);
+}
+
+/* Modal styles */
+.modal {
+    z-index: 800;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    bottom: 0;
+    position: fixed;
+    display: block;
+}
+
+.modal-box {
+    background: white;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 60px;
+}
+
+.card {
+    margin-top: 38px !important;
+}
+
+.swal-button--cancel {
+    background: #c23e3e !important;
+    color: white !important;
+}
+
+.swal-button--confirm {
+    background: var(--primary-button-color) !important;
+}
+
+.line-below {
+  width: 100%;
+  height: 1px;
+  background: var(--primary-text-color);
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .modal-box {
+        background: white;
+        width: 40%;
+        margin-left: 30%;
+    }
+    .card {
+      margin-top: 0 !important;
+    }
+}

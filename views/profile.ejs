@@ -1,0 +1,20 @@
+<body>
+    <%- include('./includes/header.ejs') %>
+    <%- include('./includes/navigation.ejs') %>
+    <div class="mt-5 pt-5">
+        <div>
+            <div class="container">
+                <%- include('./includes/description.ejs', { description: 'Profile' }) %>
+                <div class="mt-3">
+                    <h3>Name: <%= user.name %></h3>
+                </div>
+                <div>
+                    <h3>Email: <%= user.email %></h3>
+                </div>
+                <div>
+                    <h3>Notifications Accumulated: <%= user.notifications.length %></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
